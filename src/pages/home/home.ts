@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DataProvider } from './../../providers/data/data';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -7,8 +8,21 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild('slides') slides: any;
 
+  slideOptions: any;
+  flashCardFlipped: boolean = false;
+
+  constructor(public navCtrl: NavController, public dataService: DataProvider) {
+
+  }
+
+  ionViewDidLoad() {
+ 
+  }
+
+  selectAnswer(){
+    this.flashCardFlipped = true;
   }
 
 }
